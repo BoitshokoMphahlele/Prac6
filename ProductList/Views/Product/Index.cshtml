@@ -329,8 +329,10 @@ $("#productDropdown").change(function () {
 
             $("#productNameTextbox").prop("disabled", true);
             $("#SerialTextbox").prop("disabled", true);
+            $("#supplierDropdown").prop("disabled", true);
             $("#categoryDropdown").prop("disabled", true);
             $("#productDropdown").prop("disabled", true);
+            $("#addProductButton").prop("disabled", true);
             $(".btn-success").prop("disabled", true);
            
            
@@ -345,6 +347,7 @@ $("#productDropdown").change(function () {
 
             // Disable dropdowns in the row
             currentRow.find(".form-select").prop("disabled", true);
+
             currentRow.find(":input[type=text]").prop("disabled", false);
             currentRow.find(":input[type=text]").each(function () {
                 $(this).on("input", function () {
@@ -364,6 +367,8 @@ $("#productDropdown").change(function () {
             $(".btn-danger").prop("disabled", true);
             $("form :input:not(.row-edit :input)").not(":disabled").addClass("disabled").prop("disabled", true);
             $(document).one("click", ".btn-primary", function () {
+                $("#supplierDropdown").prop("disabled", false);
+                $("#addProductButton").prop("disabled", false);
                 currentRow.find(":input").prop("disabled", true);
                 currentRow.find(".btn-danger").prop("disabled", false);
                 
@@ -376,7 +381,7 @@ $("#productDropdown").change(function () {
                 // HTML Load controls disabled.
                 // -------------------------------------------
                 $(".btn-danger").prop("disabled", false);
-                $("#categoryDropdown").prop("disabled", false)
+                $("#categoryDropdown").prop("disabled", true);
 
                 $("form :input:not(.row-edit :input)").not(":disabled").removeClass("disabled").prop("disabled", false);
 
