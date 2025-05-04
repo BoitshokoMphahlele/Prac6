@@ -334,12 +334,14 @@ $("#productDropdown").change(function () {
             $("#productDropdown").prop("disabled", true);
             $("#addProductButton").prop("disabled", true);
             $(".btn-success").prop("disabled", true);
-           
-           
+
+            //Get selected row and it's ID
             var currentRow = $(this).closest("tr");
             var rowID = $(currentRow).data("id");
+            //Enable the textboxes for the selected row
             currentRow.find(":input").not(":disabled").prop("disabled", false);
             currentRow.find(":input").prop("disabled", false);
+            //Disable delete button when editing
             currentRow.find(".btn-danger").prop("disabled", true);
 
             //Populate the dropdowns and the textboxes
