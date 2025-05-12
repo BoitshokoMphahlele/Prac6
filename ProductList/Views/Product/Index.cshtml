@@ -280,7 +280,8 @@ $("#productDropdown").change(function () {
                         $("#productDropdown").prop("disabled", true);
                         $("#categoryDropdown").val("");
                         $("#productDropdown").empty().append('<option>Select a product</option>').prop("disabled", true);
-                        $("#categoryDropdown").focus();
+                        $("#supplierDropdown").focus();
+                        $("#categoryDropdown").prop("disabled", true);
                         $("#SerialTextbox").val("");
                         $("#SerialTextbox").prop("disabled", true);
 
